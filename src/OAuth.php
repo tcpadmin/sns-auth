@@ -8,11 +8,21 @@
 
 namespace anerg\OAuth2;
 
+use anerg\OAuth2\Connector\Gateway;
 use anerg\OAuth2\Connector\GatewayInterface;
 use anerg\OAuth2\Helper\Str;
 
 abstract class OAuth
 {
+    /**
+     * @param $source
+     * @param null $config
+     * @return Gateway
+     * @throws \Exception
+     */
+    public static function getInstance($source, $config=null){
+        return self::init($source, $config);
+    }
 
     protected static function init($gateway, $config = null)
     {

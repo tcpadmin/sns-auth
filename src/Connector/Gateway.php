@@ -1,8 +1,6 @@
 <?php
 namespace anerg\OAuth2\Connector;
 
-use anerg\OAuth2\Connector\GatewayInterface;
-
 /**
  * 所有第三方登录必须继承的抽象类
  */
@@ -31,6 +29,9 @@ abstract class Gateway implements GatewayInterface
      * @var array
      */
     protected $token = null;
+
+    const tAccessToken = 'access_token';
+    const tOpenId = 'openid';
 
     /**
      * 是否验证回跳地址中的state参数

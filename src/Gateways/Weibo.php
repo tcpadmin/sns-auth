@@ -121,7 +121,7 @@ class Weibo extends Gateway
      * @throws \Exception
      */
     public function setTokenInfo($tokenInfo){
-        if(empty($tokenInfo['access_token']) || empty($tokenInfo['openid'])){
+        if(empty($tokenInfo[self::tAccessToken]) || empty($tokenInfo[self::tOpenId])){
             throw new \Exception("weibo token 信息不全");
         }
         return parent::setTokenInfo($tokenInfo);
